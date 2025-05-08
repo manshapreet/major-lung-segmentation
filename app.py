@@ -71,7 +71,7 @@ uploaded_file = st.file_uploader("Upload a chest X-ray image", type=["png", "jpg
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     original_width, original_height = image.size # Get original dimensions
-    st.image(image, caption="Uploaded X-ray", use_column_width=True)
+    # st.image(image, caption="Uploaded X-ray", use_column_width=True)
     image_np = np.array(image)
     processed_image = preprocess_image(image_np)
 
@@ -85,10 +85,15 @@ if uploaded_file is not None:
 
     overlay = overlay_mask(image_np, resized_binary_mask)
 
-    col1, col2 = st.columns(2)
-    with col1:
+    col_orig, col_mask, col_overlay = st.columns([1, 1, 1]) # Create three columns
+
+    with col_orig:
+        st.image(image, caption="Uploaded X-ray", use_column_width=True)
+
+    with col_mask:
         st.image(resized_binary_mask, caption="Segmentation Mask", use_column_width=True, clamp=True)
-    with col2:
+
+    with col_overlay:
         st.image(overlay, caption="Overlay on Original", use_column_width=True)
 
     st.markdown("### Download Results")
