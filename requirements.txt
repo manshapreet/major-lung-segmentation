@@ -1,6 +1,7 @@
 streamlit==1.29.0
-tensorflow-cpu==2.12.0  # Lighter CPU-only version
-numpy==1.24.3  # Pinned to avoid conflicts
-opencv-python-headless==4.7.0.72  # No GUI dependencies
-Pillow==9.5.0
+keras==3.5.0
+tensorflow-cpu  # Let pip decide a compatible version, or specify if you know one
+numpy==1.26.4
+opencv-python-headless==4.9.0.80
+Pillow==10.2.0
 albumentations==1.3.1
