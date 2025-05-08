@@ -5,6 +5,12 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 import tempfile
 import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"  # Reduce TensorFlow logs
+import tensorflow as tf
+tf.config.set_visible_devices([], 'GPU')  # Disable GPU (Streamlit Cloud is CPU-only)
+
+# Load model with memory limits
+# @st.cache_resource(max_entries=1)  # Cache only the latest model
 
 # Set page config
 st.set_page_config(page_title="Lung Segmentation", page_icon="🫁", layout="wide")
