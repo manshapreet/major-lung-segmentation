@@ -137,5 +137,5 @@ This app uses a Dense UNet model trained on chest X-ray images for lung segmenta
 **Model Details:**
 - Architecture: Dense UNet
 - Input Size: 256×256 grayscale
-- Training Data: [Montgomery County and Shenzhen datasets](https://www.kaggle.com/datasets/kmader/finding-lungs-in-ct-data)
+- Training Data: [Montgomery County and Shenzhen datasets](https://www.kaggle.com/datasets/nikhilpandey360/chest-xray-masks-and-labels)
 """)
